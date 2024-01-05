@@ -1,0 +1,26 @@
+---
+- name: configuring apache2
+  hosts: all
+  tasks:
+    - name: instal apache2
+      apt:
+        name: apache2
+        state: present
+        update_cache: yes
+    - name: Edit index.html file
+      copy:
+        content: "madhav"
+        dest: /var/www/html/index.html
+    - name: restart apache2
+      service:
+        name: apache2
+        state: restarted
+    - name: check apache responce on host1
+      uri:
+        url: http://172.31.14.222
+        status_code: 200
+    - name: check apache responce on host2
+      uri:
+        url: http://172.31.14.123
+        status_code: 200
+...

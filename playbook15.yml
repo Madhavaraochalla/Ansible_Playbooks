@@ -1,0 +1,20 @@
+---
+- name: implmenting tags
+  hosts: all
+  tasks:
+    - name: install tree
+      apt:
+        name: tree
+        state: present
+        update_cache: yes
+      tags: tree installation
+    - name: create user
+      user: 
+        name: maha32
+        password: maha32
+      tags: create user
+    - name: copy password file
+      copy:
+        src: /etc/passwd
+        dest: /tmp
+...

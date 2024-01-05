@@ -1,0 +1,15 @@
+---
+- name: remove gathering facts
+  hosts: all
+  gather_facts: false
+  become: yes
+  tasks:
+    - name: install tree
+      apt:
+        name: tree
+        state: present
+        update_cache: yes
+...
+
+
+

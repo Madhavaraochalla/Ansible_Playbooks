@@ -1,0 +1,16 @@
+---
+- name: delete if the file is excutable
+  hosts: all
+  tasks:
+     - name: check for file f1
+       stat: 
+          path: /home/ubuntu/f1
+       register: a
+     - name: display output of the above module 
+       debug: 
+          var: a
+     - name: Delete file1 if it is excutable
+       file: 
+          name: /home/ubuntu/f1
+          state: absent
+       when: a.stat.executable == true

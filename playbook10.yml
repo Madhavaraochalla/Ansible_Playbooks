@@ -1,0 +1,14 @@
+---
+- name: Install multipe s/w apps's
+  hosts: all 
+  tasks: 
+    - name: Install s/w's
+      apt: 
+        name: "{{item}}"
+        state: present
+        update_cache: yes
+      with_items: 
+         - tree
+         - maven
+         - git
+...

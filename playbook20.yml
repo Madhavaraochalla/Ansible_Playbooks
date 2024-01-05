@@ -1,0 +1,13 @@
+---
+- name: implmenting when conditions
+  hosts: all
+  vars: 
+   - a: 10
+  tasks: 
+     - name: install tree
+       apt:
+          name: tree
+          state: present
+          update_cache: yes
+       when: a == 20
+...

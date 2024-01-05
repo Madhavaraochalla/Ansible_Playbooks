@@ -1,0 +1,6 @@
+---
+- name: edit index.html file
+  copy: 
+     content: "madhavaraoosdf"
+     dest: /var/www/html/index.html
+...

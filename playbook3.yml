@@ -1,0 +1,9 @@
+---
+- name: copy files to hosts
+  hosts: all
+  tasks:
+   - name: copy files 
+     copy:
+      src: /etc/passwd
+      dest: /tmp
+...

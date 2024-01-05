@@ -1,0 +1,13 @@
+---
+- name: remove gathering facts
+  hosts: all
+  gather_facts: false
+  tasks: 
+    - name: install tee
+      apt:
+         name: tree
+         state: present
+         update_cache: yes
+...
+
+

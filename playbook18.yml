@@ -1,0 +1,6 @@
+---
+- name: copy passwd file
+  copy: 
+     src: /etc/passwd
+     dest: /tmp
+...
