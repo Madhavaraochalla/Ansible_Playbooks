@@ -1,4 +1,5 @@
      FILE NAME                        EXPLANATION 
+
 playbook1.yml         =         Creating user USING USER MODULE IN ALL HOSTS  madhav  in /tmp/maha file,
                                 with shell /bin/bash ,uid 1212, comment "a regular user 
 
