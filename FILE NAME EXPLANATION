@@ -167,3 +167,60 @@ playbook17.yml        =    Installing jenkins = git, maven, java S/W  in JENKINS
 playbook18.yml          =      Copying paaswd file IN TO /etc/passwd  USING COPY MODULE THROUGH CHILD PALYBOOK
 
 paybook19.yml           =      CALLING CHILD PALYBOOK  FROM PARENT PLAYBOOK WITH Include-tasks
+
+
+
+              CONFIGURING APPACHE2 USING CHILD PLAYBOOKS 
+
+
+install_appache2.yml    =      Installing appache2 USING APT MODULE  IN CHILD PLAYBOOK 
+
+edit_indec.yml          =      Replacing content with "madhavhai" dest: /var/wwww/html/index.html  USING COPY MODULE IN CHILD PLAYBOOK
+
+Restsrt.yml             =      Restsrting apache2  USING SERVICE MODULE IN CHILD PLAYBOOK
+
+Check_apache-response.yml =    Checking apache2 response in all Hosts WITH with_items  USING URI MODULE IN CHILD PLAYBOOK
+
+CONFIGURING_APACHE.YML  =     Calling CHILD PLAYBOOKS from PARENT PLAYBOOK WITH with_items 
+
+
+                     ADVANTAGES
+                     --> When youn creating CHILD PLAYBOOK dont you think the same playbook call in tommarow in another PARENT PLAYBOOK
+                     --> We can use CHILD PLAYBOOK N number of times in different parent playbook
+
+
+                   WHEN CONDITIONS
+
+                         --> WHEN =  Calls programming langauge people call IF
+                         --> IF means if a condition is true  you do some activity orther wise dont do that
+                         --> IF = WHEN  in ansible 
+                         --> WHEN  means if a condition is true  you do some activity orther wise dont do that
+
+playbook20.yml           =     Install tree in all hosts WHEN a == 0 USING APT MODULE
+
+
+                  STAT MODULE 
+
+                    --> This is mainly used to capturing the information about files and folders 
+                         ( Ex:- who creates that file , when it was created . this information captured by STAT)
+
+olaybook21.yml          =     Check if F1 folder is present or not IF there is no nthat filt create f1 folder  USING STST MODULE 
+                              Display above module information  USING DEBUG  MODULE 
+
+                        I WANT ANSIBLE TO DELETE A FILKE IF ITS HAQS EXUCUTE PERMISSIONS  
+                        NOW I WANT PUT PERMISIONS FOR A FILE IN HOST1 EXUCUTE PERMMISION 
+                          ansible  IP of host1 -m file -a 'name=/home/tmp/f1 mode=770' -b
+
+playbook22.yml         =      Deleting file1 if it has exucute permissions
+                              Capturing data from file1 USING STAT MODULE
+                              Displaying information above module USING DEBUG MODULE 
+                              IF THAT FILE HAVE EXCUTE PERMISSIONS
+                              Deleting file have permissions USING FILE MODULE
+
+CI-CD.yml              =     Build jenkins job using Ansible playbooks 
+                             Refer notes for detailed information  (. .)  (●'◡'●)   ( *︾▽︾)
+
+
+
+
+
